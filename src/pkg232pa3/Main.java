@@ -12,5 +12,24 @@ public class Main {
         
         
     }
+
+    //Prims algorithm
+public void prim(){
+    
+} 
+
+
+    //Kruskals algorithm
+public void kruskal(){
     
 }
+
+
+    //Floyd-Warshall's algorithm
+public void floyd(){
+    
+}
+
+}
+
+
