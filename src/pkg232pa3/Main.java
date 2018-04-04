@@ -13,4 +13,9 @@ public class Main {
         
     }
     
+	public static void prim() {
+		System.out.println("Test"); 
+	} 
 }
+
+
