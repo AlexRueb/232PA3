@@ -15,9 +15,8 @@ public class Main {
 
     //Prims algorithm -- Connor Lowe
 public void prim() {
-		System.out.println("Test"); 
-} 
-
+	//Hello
+}
 
     //Kruskals algorithm - Alex Rueb
 public void kruskal(){
