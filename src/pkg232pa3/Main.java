@@ -13,19 +13,19 @@ public class Main {
         
     }
 
-    //Prims algorithm
+    //Prims algorithm -- Connor Lowe
 public void prim() {
 		System.out.println("Test"); 
 } 
 
 
-    //Kruskals algorithm
+    //Kruskals algorithm - Alex Rueb
 public void kruskal(){
     
 }
 
 
-    //Floyd-Warshall's algorithm
+    //Floyd-Warshall's algorithm - Nicolas Tonjum
 public void floyd(){
     
 	
