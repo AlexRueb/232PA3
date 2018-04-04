@@ -14,8 +14,8 @@ public class Main {
     }
 
     //Prims algorithm
-public void prim(){
-    
+public void prim() {
+		System.out.println("Test"); 
 } 
 
 
@@ -28,8 +28,7 @@ public void kruskal(){
     //Floyd-Warshall's algorithm
 public void floyd(){
     
-}
-
+	
 }
 
 
