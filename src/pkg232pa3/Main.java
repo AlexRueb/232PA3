@@ -12,10 +12,23 @@ public class Main {
         
         
     }
-    
-	public static void prim() {
+
+    //Prims algorithm
+public void prim() {
 		System.out.println("Test"); 
-	} 
+} 
+
+
+    //Kruskals algorithm
+public void kruskal(){
+    
+}
+
+
+    //Floyd-Warshall's algorithm
+public void floyd(){
+    
+	
 }
 
 
