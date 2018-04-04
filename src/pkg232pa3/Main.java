@@ -1,21 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Authors: Alex Rueb, Nicolas Tonjum, Connor Lowe
+ * Date: 
+ * Overview: Programming Assignment 3 -> Graph Algorithms
+ *      Using Prim's, Kruskal's, and Floyd-Warshall's algorithms
  */
 package pkg232pa3;
 
-/**
- *
- * @author alex
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
     }
     
 }
