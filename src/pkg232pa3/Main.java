@@ -11,7 +11,7 @@ import java.lang.*;
 import java.io.*;
 
 public class Main {
-    private static final String[][] matrix = new String[5][5];
+    private static final int[][] matrix = new int[5][5];
     private static final String inputFile = "input/input.txt";
 
     public static void main(String[] args) throws IOException {
@@ -21,9 +21,11 @@ public class Main {
             while (sc.hasNext()) {
                 String s = sc.nextLine();
                 String[] thisOne = s.split(",");
+                int[] thisTwo = new int[5];
                 for (int i = 0; i<5; i++){
-                matrix[matrixPos] = thisOne;
+                thisTwo[i] = Integer.parseInt(thisOne[i]);
                 }
+                matrix[matrixPos] = thisTwo;
                 matrixPos++;
             }
             prim();
@@ -42,6 +44,13 @@ public class Main {
     //Kruskals algorithm - Alex Rueb
     public static void kruskal() {
         
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < 5; j++){
+                if(matrix[i][j] == 0){
+                    
+                } 
+            }
+        }
 
     }
 
