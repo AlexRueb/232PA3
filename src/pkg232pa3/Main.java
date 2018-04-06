@@ -6,38 +6,46 @@
  */
 package pkg232pa3;
 
-import java.util.*; 
+import java.util.*;
 import java.lang.*;
-import java.io.*; 
+import java.io.*;
 
 public class Main {
-	private static final String inputFile = "input/input.txt"; 
-	public static void main(String[] args) throws IOException { 
-		try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
-			Scanner sc = new Scanner(new File(inputFile)); 
-			while (sc.hasNext()) {
-				String s = sc.nextLine(); 
-			}
-		}
-		catch (IOException x) { 
-			System.out.println("File not found"); 
-		}
-	}
+    private static final String[][] matrix = new String[5][5];
+    private static final String inputFile = "input/input.txt";
 
-	//Prims algorithm -- Connor Lowe
-	public void prim() {
+    public static void main(String[] args) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
+            Scanner sc = new Scanner(new File(inputFile));
+            int matrixPos = 0;
+            while (sc.hasNext()) {
+                String s = sc.nextLine();
+                String[] thisOne = s.split(",");
+                for (int i = 0; i<5; i++){
+                matrix[matrixPos] = thisOne;
+                }
+                matrixPos++;
+            }
+            prim();
+            kruskal();
+        } catch (IOException x) {
+            System.out.println("File not found");
+        }
+    }
 
-	}
+    //Prims algorithm -- Connor Lowe
+    public static void prim() {
 
-	//Kruskals algorithm - Alex Rueb
-	public void kruskal(){
-    
-	}
+    }
 
-	//Floyd-Warshall's algorithm - Nicolas Tonjum
-	public void floyd(){
-    
-	}
+    //Kruskals algorithm - Alex Rueb
+    public static void kruskal() {
+        
+
+    }
+
+    //Floyd-Warshall's algorithm - Nicolas Tonjum
+    public static void floyd() {
+
+    }
 }
-
-
