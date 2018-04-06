@@ -28,6 +28,7 @@ public class Main {
             }
             prim();
             kruskal();
+            floyd();
         } catch (IOException x) {
             System.out.println("File not found");
         }
