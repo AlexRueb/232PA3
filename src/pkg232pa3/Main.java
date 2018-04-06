@@ -36,7 +36,7 @@ public class Main {
 
     //Prims algorithm -- Connor Lowe
     public static void prim() {
-
+        
     }
 
     //Kruskals algorithm - Alex Rueb
@@ -50,3 +50,13 @@ public class Main {
 
     }
 }
+
+class Edge implements Comparable<Edge> {
+    int weight, source, dest;
+    @Override
+    public int compareTo(Edge o) {
+       return weight-o.weight;
+    }
+    
+}
+    
