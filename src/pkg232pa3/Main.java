@@ -45,6 +45,7 @@ public class Main {
             }
             prim(matrix);
             kruskal();
+            floyd(matrix);
         } catch (IOException x) {
             System.out.println("File not found");
         }
@@ -91,11 +92,13 @@ public class Main {
         }
 
         //Prints the tree 
-        System.out.println("Node--Cost--Node");
+        int totWeight = 0;
         for (int i = 1; i < matrix.length; i++) {
-            //System.out.println(matrix[i][tree[i]] + "	" + tree[i] + "----" + i); 
-            System.out.println("    " + (tree[i]+1) + "--" + matrix[i][tree[i]] + "--" + (i+1));
+            char s =(char) (tree[i] + 66);
+            char d =(char) (i + 66);
+            System.out.print(s + "" + d + " ");
         }
+        System.out.println("");
     }
 
     //Kruskals algorithm - Alex Rueb
@@ -144,7 +147,8 @@ public class Main {
     
     public static void floyd(int graph[][])
     {
-        System.out.println("Running Floyd's Algorithm: ");  
+        System.out.println("");
+        System.out.println("Floyd's Algorithm------------- ");  
         int table[][] = new int[vertices][vertices];           //he wants all values to be infinity????
         int i, j, k;
         for (i = 0; i < vertices; i++)                      // start copy graph to the new table
@@ -295,14 +299,14 @@ public class Main {
             }
 
             // print the built MST
-            System.out.println("The Minimum Spanning tree is:");
             int resTotal = 0;
             for (i = 0; i < e; ++i) {
-                System.out.println(result[i].source + " <--> "
-                        + result[i].dest + " == " + result[i].weight);
+                char s = (char) (result[i].source + 65);
+                char d = (char) (result[i].dest + 65);
+                System.out.print((s) +"" + (d) + " ");
                 resTotal += result[i].weight;
             }
-            System.out.println("The total travel cost is: " + resTotal);
+            System.out.println("\n\nThe total travel cost is: " + resTotal);
 
         }
     }
