@@ -44,7 +44,7 @@ public class Main {
 
     //Prims algorithm -- Connor Lowe
     public static void prim() {
-        
+	        
     }
 
     //Kruskals algorithm - Alex Rueb
