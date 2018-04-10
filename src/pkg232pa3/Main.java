@@ -24,28 +24,31 @@ public class Main {
             int matrixPos = 0;
             while (sc.hasNext()) {
                 String s = sc.nextLine();
-                String[] thisOne = s.split(",");
+                String[] thisOne = s.split(",");//splits the lines by the commas
                 vertices = thisOne.length;
-                if (matrix == null) {
+                if (matrix == null) { //creates empty square matrix if there is no matrix
                     matrix = new int[vertices][vertices];
                 }
                 int[] thisTwo = new int[vertices];
                 for (int i = 0; i < vertices; i++) {
-                    if(thisOne[i].equals("∞")){                 //and this
-                    	thisTwo[i] = INF;
+                    if(thisOne[i].equals("∞")){                 //if there is an infinity symbol
+                    	thisTwo[i] = INF;                       //replace it with the INF variable
                 	} else{
                     	thisTwo[i] = Integer.parseInt(thisOne[i]);
                 	}
-                    if (thisTwo[i] != 0) {
+                    if (thisTwo[i] != 0) {                      //if its not a 0, add it to the edges 
                         edges++;
                     }
                 }
                 matrix[matrixPos] = thisTwo;
                 matrixPos++;
             }
-            prim(matrix);
+            
+            //run the three algorithm functions
+            prim(matrix);   
             kruskal();
             floyd(matrix);
+            
         } catch (IOException x) {
             System.out.println("File not found");
         }
