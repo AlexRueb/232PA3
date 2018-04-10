@@ -12,8 +12,9 @@ import java.io.*;
 public class Main {
     private static int[][] matrix;
     private static final String inputFile = "input/input.txt";
-    public static int edges;
-    public static int vertices;
+    private static int edges;
+    private static int vertices;
+
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             Scanner sc = new Scanner(new File(inputFile));
@@ -41,7 +42,12 @@ public class Main {
 
     //Prims algorithm -- Connor Lowe
     public static void prim() {
-	        
+	int nodes = matrix.length; 
+	System.out.println(nodes); 
+	boolean[] hit = new boolean[matrix.length]; 
+	int[] minCost = new int[matrix.length]; 
+
+	hit[0] = true; 
     }
 }
 
