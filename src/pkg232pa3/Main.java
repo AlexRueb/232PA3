@@ -86,17 +86,16 @@ public class Main {
 }
 
 //Graph class and methods heavily inspired by:https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
-class Graph 
-{
+class Graph {
 
-    int vertices,totEdges; //int values for # of vertices and edges
+    int vertices, totalEdges; //int values for # of vertices and edges
     Edge allEdges[]; //the array of the sorted edges
 
     Graph() {
         vertices = Main.vertices;
-        totEdges= Main.edges;
-        allEdges = new Edge[totEdges];
-        for (int i = 0; i <totEdges; ++i) {
+        totalEdges = Main.edges;
+        allEdges = new Edge[totalEdges];
+        for (int i = 0; i < totalEdges; ++i) {
             allEdges[i] = new Edge();
         }
     }
@@ -124,8 +123,7 @@ class Graph
     int find(subset subsetList[], int i) {
         if (subsetList[i].parent == i) {
             //do nothing
-        }
-        else{
+        } else {
             subsetList[i].parent = find(subsetList, subsetList[i].parent);
         }
         return subsetList[i].parent;
@@ -143,8 +141,7 @@ class Graph
             subsetList[xroot].parent = yroot;
         } else if (subsetList[xroot].rank > subsetList[yroot].rank) {
             subsetList[yroot].parent = xroot;
-        } 
-        // If ranks are same, then make one as root and make it's rank 1 higher
+        } // If ranks are same, then make one as root and make it's rank 1 higher
         else {
             subsetList[yroot].parent = xroot;
             subsetList[xroot].rank++;
@@ -161,8 +158,8 @@ class Graph
         }
 
         // Create an array of subsets, one for each edge
-        subset subsetList[] = new subset[totEdges];
-        for (i = 0; i <totEdges; ++i) {
+        subset subsetList[] = new subset[totalEdges];
+        for (i = 0; i < totalEdges; ++i) {
             subsetList[i] = new subset();
         }
 
@@ -192,7 +189,7 @@ class Graph
                 result[e++] = currentEdge;
                 Combine(subsetList, x, y);
             }
-            // Else discard the currentEdge
+            // if they are the same, discard the currentEdge
         }
 
         // print the built MST
