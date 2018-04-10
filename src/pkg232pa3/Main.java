@@ -14,6 +14,7 @@ public class Main {
 
     private static int[][] matrix; //the adjacency matrix -- DO NOT MODIFY
     private static final String inputFile = "input/input.txt";
+    private static int INF = 999999999;
     public static int edges; //The amount of edges
     public static int vertices; //the amout of vertices or 'nodes'
 
@@ -30,7 +31,11 @@ public class Main {
                 }
                 int[] thisTwo = new int[vertices];
                 for (int i = 0; i < vertices; i++) {
-                    thisTwo[i] = Integer.parseInt(thisOne[i]);
+                    if(thisOne[i].equals("∞")){                 //and this
+                    	thisTwo[i] = INF;
+                	} else{
+                    	thisTwo[i] = Integer.parseInt(thisOne[i]);
+                	}
                     if (thisTwo[i] != 0) {
                         edges++;
                     }
@@ -135,6 +140,51 @@ public class Main {
             }
         }
         return smallest;
+    }
+    
+    public static void floyd(int graph[][])
+    {
+        System.out.println("Running Floyd's Algorithm: ");  
+        int table[][] = new int[vertices][vertices];           //he wants all values to be infinity????
+        int i, j, k;
+        for (i = 0; i < vertices; i++)                      // start copy graph to the new table
+        {
+            for (j = 0; j < vertices; j++)
+            {
+                table[i][j] = graph[i][j];
+            }
+        }                                                   // end copy graph to the new table
+        for (k = 0; k < vertices; k++)                              // starting loop through the table
+        {
+            for (i = 0; i < vertices; i++)
+            {
+                for (j = 0; j < vertices; j++)
+                {
+                    if (table[i][k] + table[k][j] < table[i][j])        // check if distance is smaller    
+                    {
+                        table[i][j] = table[i][k] + table[k][j];        // change it if distance is smaller
+                        System.out.println("");                         // start printing method
+                        System.out.println("Printing:");
+                        for (int a=0; a<vertices; ++a)
+                        {
+                            for (int b=0; b<vertices; ++b)
+                            {
+                                if (table[a][b]==INF)
+                                {
+                                    System.out.print("INF ");
+                                }
+                                else
+                                {
+                                    System.out.print(table[a][b]+"   ");
+                                }
+                            }
+                            System.out.println();
+                        }
+                        System.out.println("");                         // end printing method
+                    }
+                }
+            }                                                       // ending loop through the table
+        }
     }
 //Graph class and methods heavily inspired by:https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
 
