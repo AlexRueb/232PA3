@@ -160,7 +160,7 @@ class Graph
             result[i] = new Edge();
         }
 
-        // Create an array of subsetList, one for each edge
+        // Create an array of subsets, one for each edge
         subset subsetList[] = new subset[totEdges];
         for (i = 0; i <totEdges; ++i) {
             subsetList[i] = new subset();
@@ -179,12 +179,12 @@ class Graph
             //the currentEdge will be the smallest edge not sorted already
             Edge currentEdge = allEdges[i++];
 
-            //finds all the connected vertices to the source vertice
+            //finds all the vertices connected to the source vertice
             int x = find(subsetList, currentEdge.source);
-            //finds all the connected vertices to the destination vertice
+            //finds all the vertices connected to the destination vertice
             int y = find(subsetList, currentEdge.dest);
 
-            //if these two subsetList are no the same, then adding it will not cause
+            //if these two subsets are not the same, then adding it will not cause
             //a cycle. It is safe to merge them, we add the current edge to the
             //results array and add the two subsetList together as they are one larger
             //subset now
