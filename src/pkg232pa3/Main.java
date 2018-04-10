@@ -4,7 +4,6 @@
  * Overview: Programming Assignment 3 -> Graph Algorithms
  *      Using Prim's, Kruskal's, and Floyd-Warshall's algorithms
  */
-package pkg232pa3;
 
 import java.util.*;
 import java.lang.*;
@@ -35,8 +34,6 @@ public class Main {
                 matrixPos++;
             }
             prim();
-            kruskal();
-            floyd();
         } catch (IOException x) {
             System.out.println("File not found");
         }
@@ -46,38 +43,5 @@ public class Main {
     public static void prim() {
 	        
     }
-
-    //Kruskals algorithm - Alex Rueb
-    public static void kruskal() {
-        Edge allEdges[] = new Edge[Main.edges];
-        int edgePos = 0;
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++){
-                if(matrix[i][j] == 0){} 
-                else {
-                    Edge edge = new Edge();
-                    edge.weight = matrix[i][j];
-                    edge.source = i;
-                    edge.dest = j;
-                    allEdges[edgePos] = edge;
-                }
-            }
-        }
-        System.out.println("");
-    }
-
-    //Floyd-Warshall's algorithm - Nicolas Tonjum
-    public static void floyd() {
-
-    }
 }
 
-class Edge implements Comparable<Edge> {
-    int weight, source, dest;
-    @Override
-    public int compareTo(Edge o) {
-       return weight-o.weight;
-    }
-    
-}
-    
